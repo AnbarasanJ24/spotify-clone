@@ -2,6 +2,7 @@ import './App.css';
 import { getRefreshToken } from './Helper/spotify';
 import Login from './Login/Login';
 import React, { useEffect, useState } from 'react'
+import Player from './Player/player';
 // import SpotifyWebApi from 'spotify-web-api-js'
 
 // const spotify = new SpotifyWebApi();
@@ -34,10 +35,7 @@ function App() {
   return (
     <div className="app">
       {
-        token ? <h1>Logged In</h1> :
-          (
-            <Login />
-          )
+        token ? <Player /> : <Login />
       }
     </div>
   );
